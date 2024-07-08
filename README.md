@@ -46,5 +46,5 @@ Este archivo SQL ejecuta las queries de SQL para crear la base de datos y la tab
 El script `end2end.sh` automatiza el proceso de construcción de imágenes Docker, luego su ejecución en formato de Docker Contenedores, creación de tablas, carga de datos, y ejecución de preguntas de negocio. Este script verifica si las imágenes Docker están construidas, levanta el contenedor de PostgreSQL, espera a que esté listo, ejecuta el script SQL para crear la tabla, carga los datos desde el CSV utilizando `populate_db.py`, y finalmente ejecuta las consultas de reporte con `reporte.py`.
 
 ## Ejecución
-- Ejecutar en bash el archivo end2end.sh
+- Ejecutar en bash el archivo `end2end.sh`
 
