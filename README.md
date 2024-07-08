@@ -21,6 +21,6 @@ El dataset "WorldCups" es un conjunto de datos de La Copa Mundial de la FIFA que
 - **Origen**: Repositorio de Copa Mundiales de Fútbol
 - **Período**: 1930 - 2022
 - **Tipo de negocio**: Deportivo
-- **Link**: [Link_Kaggle](https://www.kaggle.com/datasets/muhammadjiyadkhan/fifa-dataset) - 
+- **Link**: [Link_Kaggle](https://www.kaggle.com/datasets/muhammadjiyadkhan/fifa-dataset) - Worldcup.csv
 
 
