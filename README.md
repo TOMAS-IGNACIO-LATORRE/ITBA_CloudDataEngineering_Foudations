@@ -7,3 +7,11 @@ La base de datos debe quedar lista para recibir consultas. Durante la carga de i
 Este script debe ejecutarse dentro de un nuevo container de Docker mediante el comando docker run.
 
 El container de Docker generado para no debe contener los datos crudos que se utilizarían para cargar la base. Para pasar los archivos con los datos, se puede montar un volumen (argumento -v de docker run) o bien bajarlos directamente desde Internet usando alguna librería de Python (como requests).
+
+## Respuesta:
+
+Se agregaron los siguientes archivos:
+
+- Dockerfile-ejercicio-4
+- requirements.txt
+  
