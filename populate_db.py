@@ -26,13 +26,36 @@ def set_constraints(conn, enable=False):
         cursor.execute(f"ALTER TABLE world_cups {action} TRIGGER ALL;")
     conn.commit()
 
+# Verificar si la tabla existe
+def table_exists(conn, table_name):
+    with conn.cursor() as cursor:
+        cursor.execute("""
+            SELECT EXISTS (
+                SELECT 1
+                FROM   information_schema.tables 
+                WHERE  table_name = %s
+            );
+        """, (table_name,))
+        return cursor.fetchone()[0]
+
+# Eliminar tabla si existe
+def drop_table_if_exists(conn, table_name):
+    if table_exists(conn, table_name):
+        with conn.cursor() as cursor:
+            cursor.execute(f"DROP TABLE {table_name};")
+        conn.commit()
+        print(f"Tabla '{table_name}' eliminada.")
+
 # Cargar datos en la base de datos
-def load_data(engine, data_url, table_name='world_cups'):
+def load_data(engine, data_url, table_name):
     df = pd.read_csv(data_url)
     
     # Deshabilitar restricciones antes de la carga
     with engine.connect() as conn:
         set_constraints(conn, enable=False)
+        
+        # Verificar y eliminar tabla si existe
+        drop_table_if_exists(conn, table_name)
         
         # Cargar datos
         df.to_sql(table_name, engine, if_exists='append', index=False)
@@ -48,15 +71,16 @@ def main():
     host = "db"
     port = "5432"
     data_url = "WorldCups.csv"
+    table_name = "world_cups"
 
     wait_for_postgres(user, password, db, host, port)
 
     try:
         engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
         
-        # Cargar datos en la tabla 'world_cups'
-        print("Cargando datos en la tabla 'world_cups'...")
-        load_data(engine, data_url)
+        # Cargar datos en la tabla especificada
+        print(f"Cargando datos en la tabla '{table_name}'...")
+        load_data(engine, data_url, table_name)
         
     except OperationalError as e:
         print(f"Error de conexión: {e}")
