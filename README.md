@@ -9,5 +9,5 @@ Se agrego:
 - Dockerfile_reporte
 - end2end.sh
 
-Se siguieron las buenas prácticas de tener dos dockerfile para cada uno de los archivos.py
+Se siguieron las buenas prácticas de tener dos dockerfile para cada uno de los archivos.py y con clonar el repositorio y ejecutar el end2end.sh alcanza para la correcta ejercución y testeo del archivo. 
 
