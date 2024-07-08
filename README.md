@@ -14,4 +14,8 @@ Se agregaron los siguientes archivos:
 
 - Dockerfile-ejercicio-4
 - requirements.txt
+- populate_db.py
+
+Para ejecutarlo:
+- populate_db_ejercicio4.sh
   
