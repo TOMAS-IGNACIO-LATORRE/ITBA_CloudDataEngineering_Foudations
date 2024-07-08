@@ -23,7 +23,9 @@ El dataset "WorldCups" es un conjunto de datos de La Copa Mundial de la FIFA que
 - **Tipo de negocio**: Deportivo
 - **Link**: [Link_Kaggle](https://www.kaggle.com/datasets/muhammadjiyadkhan/fifa-dataset) - Worldcup.csv
 
-- ## Archivos y Scripts finales (Branch ejercicio-6)
+- ## Archivos finales
+
+Se ubican en el branch `ejercicio-6`
 
 ### 1. Dockerfile
 
