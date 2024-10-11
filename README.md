@@ -25,7 +25,7 @@ El dataset "WorldCups" es un conjunto de datos de La Copa Mundial de la FIFA que
 
 - ## Archivos finales
 
-Se ubican en el branch `ejercicio-6`
+Se ubican en el branch `ejercicio-6` - [Link al branch 6](https://github.com/TOMAS-IGNACIO-LATORRE/ITBA_CloudDataEngineering_Foudations/tree/ejercicio-6)
 
 ### 1. Dockerfile
 
